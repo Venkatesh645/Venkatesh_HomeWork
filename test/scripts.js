@@ -1,10 +1,10 @@
 var index=0;
-debugger;
+
 var i;
 var homeImg=document.getElementsByClassName('homeImg');
 slideImage();
 function slideImage(){
-debugger;
+
 for(i=0;i<homeImg.length;i++){
 	homeImg[i].style.display="none";
 }
