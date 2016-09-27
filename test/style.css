@@ -104,3 +104,24 @@ nav{
 	padding: 10px;
 }
 
+#File, #Filer {
+	display: none;
+}
+
+#fileUpload{
+	
+	height: 150px;
+	
+	
+	padding: 5px;
+
+}
+#uploadimg{
+	float: right;
+	text-align: center;
+	padding: 5px;
+}
+
+.fileU {
+	border:2px solid black;
+}

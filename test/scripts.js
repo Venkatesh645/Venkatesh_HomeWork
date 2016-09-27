@@ -38,5 +38,12 @@ $('#menuhome').click(function(){
 
 $('#btnSubmit').click(function(){
 	alert('Successfuly Submitted');
-})
+});
 
+$('#fileUpload').click(function(){
+	$('#File').click();
+});
+
+$('#uploadimg').click(function(){
+	$('#Filer').click();
+});
