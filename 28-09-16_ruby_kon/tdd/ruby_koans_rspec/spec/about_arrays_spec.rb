@@ -4,8 +4,8 @@ describe "Arrays" do
 
   it 'should demonstrate array creation' do
     empty_array = Array.new
-    empty_array.class.should eql __
-    empty_array.size.should eql __
+    empty_array.class.should eql Array
+    empty_array.size.should eql 0
   end
 
   it "should demonstrate array literals" do
@@ -16,21 +16,21 @@ describe "Arrays" do
     array.should eql [1]
 
     array[1] = 2
-    array.should eql [1, __]
+    array.should eql [1, 2]
 
     array << 333
-    array.should eql __
+    array.should eql [1, 2, 333]
   end
 
   it "should demonstrate accessing array elements" do
     array = [:peanut, :butter, :and, :jelly]
 
-    array[0].should eql __
-    array.first.should eql __
-    array[3].should eql __
-    array.last.should eql __
-    array[-1].should eql __
-    array[-3].should eql __
+    array[0].should eql :peanut
+    array.first.should eql :peanut
+    array[3].should eql :jelly
+    array.last.should eql :jelly
+    array[-1].should eql :jelly
+    array[-3].should eql :butter
   end
 
   it "should demonstrate slicing arrays" do

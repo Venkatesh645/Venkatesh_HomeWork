@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Objects" do
 
   it "should show that everything is an object" do
-    1.is_a?(Object).should == __
+    1.is_a?(Object).should == false
     1.5.is_a?(Object).should == __
     "string".is_a?(Object).should == __
     nil.is_a?(Object).should == __
