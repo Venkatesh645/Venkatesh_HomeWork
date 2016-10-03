@@ -1,0 +1,540 @@
+
+
+#aboutpage {
+    display: none;
+}
+
+.vvpuramText {
+        display: none;
+}
+
+.kormangalaText {
+            display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navBar {
+    background-color: grey;
+    margin-bottom: 0;
+    border-color: grey;
+}
+
+nav.navbar.navbar-default.navBar {
+    background-color: grey;
+    margin-bottom: 0;
+    padding: 10px;
+    border-color: grey;
+}
+
+a#aboutmenu {
+    color: white;
+}
+
+a#contactmenu {
+    color: white;
+}
+
+h2.banner {
+    position: absolute;
+    top: 80px;
+    text-align: center;
+    width: 91%;;;
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+    padding: 10px;
+    left: 34px;
+}
+
+
+.col-md-12.content {
+    background-color: white;
+}
+
+.col-md-12.menu {
+    background-color: white;
+}
+
+.col-md-3.indiranagardiv .vvpuramdiv .kormangaladiv {
+}
+
+.indiranagardiv, .vvpuramdiv, .kormangaladiv {
+    text-align: center;
+    padding: 11px;
+    background-color: #c7cdd0;
+    margin-left: 43px;
+   
+}
+
+.indiranagardiv a, .vvpuramdiv a, .kormangaladiv a {
+    text-align: center;
+    padding: 11px;
+    background-color: #c7cdd0;
+    text-decoration: none;
+    border-bottom: 5px solid orange;
+}
+
+.indiranagardiv a:focus, .vvpuramdiv a:focus, .kormangaladiv a:focus {
+    text-align: center;
+    padding: 11px;
+    background-color: #c7cdd0;
+   
+    border-bottom: 5px solid black;
+}
+
+
+.col-md-12.content {
+    text-align: justify;
+}
+
+.col-md-12.menu {
+}
+
+.content {
+    padding-top: 15px;
+}
+
+ul.contentul {
+    list-style: none;
+    margin-left: -38px;
+}
+
+ul.ulMustHave {
+    list-style: none;
+    margin-left: -39px;
+    line-height: 31px;
+}
+
+ul.doTry {
+    list-style: none;
+    margin-left: -39px;
+    line-height: 31px;
+}
+
+
+ul.footerul li {
+    display: inline;;;
+    list-style: none;
+    padding-right: 49px;;
+}
+
+
+
+footer a {
+    color: orange;;
+}
+
+
+
+
+p.footertext {;
+    color: antiquewhite;;
+    font-style: oblique;
+}
+
+
+
+
+
+div#footerdiv {
+    padding-top: 19px;
+}
+
+
+
+
+
+
+ul.footerul {
+    list-style: none;
+    margin-left: -46px;
+}
+
+
+
+
+
+
+
+.aboutcontent.col-md-12 {
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+.aboutdiv h3 {;
+    color: #ff9100;
+}
+
+
+
+
+
+
+
+
+
+.rightsidediv h3 {;
+    color: #ff9100;
+}
+
+
+
+
+
+
+
+
+
+
+.col-md-8.aboutdiv {
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+.col-md-4.rightsidediv > div {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.col-md-12.rightsidediv1 {;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.col-md-12.rightsidediv2 {
+    padding-top: 31px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.col-md-12.rightsidediv3 {
+    padding-top: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+img.img-responsive.slideimage {
+    background-color: white;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.col-md-8.maincontent {;;;;;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.listOfFoodPlace ul {
+    line-height: 31.5px;
+    list-style: none;
+    margin-left: -37px;;;;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contentul li {;
+    margin-bottom: 29px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.red {
+    color: #ff9100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a#homemenu {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a#homemenu:focus, #aboutmenu:focus {
+    border-bottom: 3px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p.boldBlack {;
+    font-weight: bolder;;
+    font-family: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h4.name {
+    color: #ff9100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h4.name {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h4.name {
+}
