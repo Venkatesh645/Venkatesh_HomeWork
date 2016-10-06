@@ -1,8 +1,6 @@
-#Factorial program using module with instance method
+class Factorial
 
-module Factorial
-
-	def fact(num)
+	def self.fact(num)
 		n=num.to_i
 
 		if n!=0 
@@ -14,17 +12,11 @@ module Factorial
 			puts "The factorial of the #{n} is : #{fact}" 
 
 		else
-			p "Please enter only number"
+			puts "Please enter only number"
 
 		end
 	end
-
 end
-
-class Getfact
-		include Factorial
-
-	end
 print  "Enter the number : "
 num=gets
-	Getfact.new.fact(num)
+Factorial.fact(num)

@@ -1,4 +1,4 @@
-#Factorial program using module with instance method
+#Factorial program using module with class method
 
 module Factorial
 
@@ -14,7 +14,7 @@ module Factorial
 			puts "The factorial of the #{n} is : #{fact}" 
 
 		else
-			p "Please enter only number"
+			puts "Please enter only number"
 
 		end
 	end
@@ -22,9 +22,11 @@ module Factorial
 end
 
 class Getfact
-		include Factorial
 
-	end
+		extend Factorial
+end
+
+
 print  "Enter the number : "
 num=gets
-	Getfact.new.fact(num)
+Getfact.fact(num)
