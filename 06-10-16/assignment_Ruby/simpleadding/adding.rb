@@ -1,3 +1,4 @@
+#Summation program
 def add(num)
 	@num=num
 	@sum=0

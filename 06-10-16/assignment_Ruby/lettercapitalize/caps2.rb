@@ -1,3 +1,6 @@
+#letter capitalize program
+#class/class method call
+
 class Lettercaps
 
 def self.letterCapitalize(str)

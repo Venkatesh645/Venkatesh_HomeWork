@@ -1,19 +1,4 @@
-# def AlphabetSoup(str)
-
-#   # convert the string into a list of characters
-#   chars = str.split('')
-
-#   # sort the list in alphabetical order
-#   sorted = chars.sort
-  
-#   # return the newly joined string
-#   puts sorted.join
-         
-# end
-   
-   
-# # keep this function call here    
-# AlphabetSoup(gets)
+# Alphabet soup program
 
 def alphabetSoup(str)
 
@@ -39,16 +24,11 @@ def alphabetSoup(str)
 			end
 		end
 	end
-for i in 0..@str.length-2
-	 if @str[i]!=" "
-	 		t[i]= @str[i]
-	else
-		next
-	end
 
-	puts t
 
-end
+	puts @str
+
+
 end
 
 print "Enter the string : "

@@ -1,3 +1,6 @@
+#checknum program
+#class /class method call
+
 class	Checknum
 
 

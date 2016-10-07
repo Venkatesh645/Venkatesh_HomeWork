@@ -1,4 +1,5 @@
-#check number program of module with class variable
+#checknum program
+#module /extend-class method call
 
 module	Checknum
 

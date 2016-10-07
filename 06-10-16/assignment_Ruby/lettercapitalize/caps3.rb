@@ -1,3 +1,6 @@
+#letter capitalize program
+#module/instance method call
+
 module Lettercaps
 
 def letterCapitalize(str)

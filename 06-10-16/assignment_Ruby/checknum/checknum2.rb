@@ -1,4 +1,5 @@
-#check number program of module with instance variable
+#checknum program
+#module /include-Instance method call
 
 
 module	Checknum
