@@ -1,0 +1,27 @@
+<h1>List of Articles</h1>
+
+<table border="2px solid ">
+<tr>
+	<th>Title </th>
+	<th>Text </th>
+<tr>
+
+
+<tr>
+	<% @articles.each do |a| %>
+
+		<td><%= a.title%> </td>
+
+		<td><%= a.text%> </td>
+		<td><%= link_to 'Show' , article_path(a)%> </td>
+
+
+</tr>
+
+
+
+<% end %>
+</table>
+<div>
+<%= link_to 'New Article' , new_article_path %> 
+</div>
