@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SaveLife</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<main class="cd-main">
+
+  <header>
+  <div class="row">
+  <div class="col-md-6 logo" >
+    <!-- <h1>Save Life</h1> -->
+    <img src="/assets/imgo.jpg" />
+    </div>
+  <div class="col-md-6">
+  <% if current_user %>
+  <p class="sign_out_text">Singed in as <%= current_user.first_name %></p>
+  <%= link_to 'Sign Out', sign_out_path, :class =>"btn btn-primary navbar-btn sign_out_button", :method => "delete" %>
+  <% else %>
+  <button type="button" class="btn btn-primary navbar-btn navbar-right sign-in-btn visible-sm visible-md visible-lg sign_in_button" data-toggle="modal" data-target="#myModal">Sign in</button>
+  <% end %>
+ </div>
+   <%#= link_to 'Sign In', sign_in_form_path, :remote => true %>
+    </div>
+    </div>
+  </header>
+  </main>
+<%= yield %>
+<div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+    <%= render :partial => "web/sessions/new" %>
+  </div>
+
+
+</body>
+</html>

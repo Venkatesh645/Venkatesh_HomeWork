@@ -1,0 +1,28 @@
+<div class="component">
+  <h3>Help the following people by donating your Blood</h3>
+  <p>Please find the details of the Recipient below</p><br />
+    <% if @contacts.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Blood group</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @contacts.each do |c| %>
+
+      <tr>
+      <td class="user-name"><%= c.name %></td>
+      <td class="user-email"><%= c.blood_group.name %></td>
+      <td class="user-phone"><%= c.phone_number %></td>
+      </tr>
+      <% end %>
+      <% else  %>
+      <h3>Till we don't have any requirements for your blood group.</h3>
+      <% end %>
+    </tbody>
+  </table>
+  <br />
+</div>
