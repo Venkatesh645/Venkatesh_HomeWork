@@ -1,0 +1,24 @@
+
+  it "should demonstrate a_regexp_can_search_a_string_for_matching_content" do
+    "some matching content"[/match/].should eql "match"
+  end
+
+  it "should demonstrate a_failed_match_returns_nil" do
+    "some matching content"[/missing/].should eql nil
+  end
+
+  # ------------------------------------------------------------------
+
+  it "should demonstrate question_mark_means_optional" do
+    "abbcccddddeeeee"[/ab?/].should eql "ab"
+    "abbcccddddeeeee"[/az?/].should eql "a"
+  end
+
+  it "should demonstrate plus_means_one_or_more" do
+    "abbcccddddeeeee"[/bc+/].should eql "abb"
+  end
+
+  it "should demonstrate asterisk_means_zero_or_more" do
+    "abbcccddddeeeee"[/ab*/].should eql "abb"
+    "abbcccddddeeeee"[/az*/].should eql "a"
+    "abbcccddddeeeee"[/z*/].should eql ""

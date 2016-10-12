@@ -8,12 +8,12 @@ describe "Methods" do
 
 
   it "should demonstrate calling_global_methods" do
-    my_global_method(2,3).should eql __
+    my_global_method(2,3).should eql 5
   end
 
   it "should demonstrate calling_global_methods_without_parentheses" do
     result = my_global_method 2, 3
-    result.should eql __
+    result.should eql 5
   end
 
   # (NOTE: We are Using eval below because the example code is

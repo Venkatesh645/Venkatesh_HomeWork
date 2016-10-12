@@ -9,14 +9,14 @@ describe "Blocks" do
 
   it "should demonstrate methods_can_take_blocks" do
     yielded_result = method_with_block { 1 + 2 }
-    yielded_result.should eql __
+    yielded_result.should eql 3
   end
 
   it "should demonstrate blocks_can_be_defined_with_do_end_too" do
     yielded_result = method_with_block do
       1 + 2
     end
-    yielded_result.should eql __
+    yielded_result.should eql 3
   end
 
   # ------------------------------------------------------------------
