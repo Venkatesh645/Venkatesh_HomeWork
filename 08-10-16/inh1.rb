@@ -49,7 +49,7 @@
 class Bicycle  
   # attr_reader :gears, :wheels, :seats  
   def a
-    puts @wheels
+    puts "inside Bicycle wheels value = #{@wheels}"
   end  
 end  
   
