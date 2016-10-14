@@ -149,7 +149,7 @@ class AboutClasses < EdgeCase::Koan
     def to_s
       "<Dog(name=#{@name})>"
     end
-
+                                                                                        
     def inspect
       "<Dog named '#{name}'>"
     end
