@@ -1,0 +1,22 @@
+<h1>Employee Registration</h1>
+
+
+<p>
+	<%= form_for @employee, url: create_employee_path  do |f|%>
+</p>
+<p>
+	<h2>First Name: </h2>
+	<%= f.text_field :fname %>
+</p>
+
+<p><h2>Last Name: </h2>
+	<%= f.text_field :lname %>
+</p>
+
+<p><h2>Employee Id: </h2>
+	<%= f.text_field :eid %>
+</p>
+
+<p><%= f.submit %></p>
+
+<% end%>
