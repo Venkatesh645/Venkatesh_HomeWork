@@ -9,17 +9,18 @@ slideShow();
 function slideShow(){
 	
 	var slide1=document.getElementsByClassName("slideimage");
-	var dots=document.getElementsByClassName("dot");
+	var dots1=document.getElementsByClassName("dot");
 	for(var i=0;i<slide1.length;i++){
 		slide1[i].style.display="none";
+		dots1[i].style.color="black";
 		
 
 	}
 
 	
 	var slide2=document.getElementsByClassName("slideimage");
+	 var dots2=document.getElementsByClassName("dot");
 
-	
 
 
 	
@@ -31,11 +32,11 @@ function slideShow(){
 	v=index;
 
 	slide2[index].style.display="block";
-
+	dots2[index].style.color="red";
 
 	
 	index++;
-	setTimeout(slideShow, 10000);
+	setTimeout(slideShow, 15000);
 
 	
 }
@@ -52,16 +53,21 @@ function slideShow(){
 
 
 
-function currentSlide(n){
+function currentSlide(n)
+{
 	var slidedot=document.getElementsByClassName("slideimage");
-	for(var i=0;i<slidedot.length;i++){
+	var dots1=document.getElementsByClassName("dot");
+	for(var i=0;i<slidedot.length;i++)
+	{
 		slidedot[i].style.display="none";
+		dots1[i].style.color="black";
 		
 
 	}
 
 	
 	slidedot[n].style.display="block";
+	dots1[n].style.color="red";
 	
 	
 	
@@ -71,18 +77,21 @@ function currentSlide(n){
 
 function prev(){
 	var slidedot=document.getElementsByClassName("slideimage");
+	var dots1=document.getElementsByClassName("dot");
 	for(var i=0;i<slidedot.length;i++){
 		slidedot[i].style.display="none";
-		
+		dots1[i].style.color="black";
 
 	}
 	
 
 	if (v==0){
-		slidedot[v=v+slidedot.length-1].style.display="block";
+		slidedot[v+slidedot.length-1].style.display="block";
+		dots1[v=v+slidedot.length-1].style.color="red";
 	}
 	else{
-		slidedot[v=v-1].style.display="block";
+		slidedot[v-1].style.display="block";
+		dots1[v=v-1].style.color="red";
 	}
 
 
@@ -90,17 +99,21 @@ function prev(){
 
 function next(){
 	var slidedot=document.getElementsByClassName("slideimage");
+	var dots1=document.getElementsByClassName("dot");
 	for(var i=0;i<slidedot.length;i++){
 		slidedot[i].style.display="none";
+		dots1[i].style.color="black";
 		
 
 	}
 
 	if (v==((slidedot.length)-1)){
-		slidedot[v=v-((slidedot.length)-1)].style.display="block";
+		slidedot[v-((slidedot.length)-1)].style.display="block";
+		dots1[v=v-((slidedot.length)-1)].style.color="red";
 	}
 	else{
-		slidedot[v=v+1].style.display="block";
+		slidedot[v+1].style.display="block";
+		dots1[v=v+1].style.color="red";
 	}
 
 }
@@ -108,7 +121,7 @@ function next(){
 
 /********************Home and About page navigation****************************************/
 
-$('#homemenu').click(function(){
+$('.homemenu').click(function(){
 	$('#aboutpage').hide();
 	$('#homepage').show();
 });
@@ -117,3 +130,4 @@ $('.aboutmenu').click(function(){
 	$('#aboutpage').show();
 	$('#homepage').hide();
 });
+
