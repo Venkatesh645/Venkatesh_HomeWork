@@ -1,5 +1,8 @@
 
-
+html, body{
+	width: 100%;
+	height: 100%;
+}
 
 
 
@@ -131,7 +134,7 @@
 			padding-right: 10px;
 		}
 
-		.footer{
+		/*.footer{
 			text-align: center;
 			
 			
@@ -142,7 +145,7 @@
 			color: aliceblue;
 			
 			
-		}
+		}*/
 
 		/*******About Us Page*****/
 
@@ -220,7 +223,7 @@
 		body{
 			background-image: url('images/back.jpg');
 			background-repeat: no-repeat;
-			background-size: cover;
+			background-size: cover;;
 		}
 
 		.heading img{
@@ -263,7 +266,6 @@
 			text-align: center;
 			font-size: 30px;
 			font-weight: bolder;
-			text-shadow: 1px 2px 5px greenyellow;
 		}
 
 
@@ -286,10 +288,7 @@
 
 		
 
-		.footernav li{
-			display: inline;
-			padding: 17px;
-		}
+	
 
 		.pager li>a {
 
@@ -385,3 +384,54 @@
 	color: white;
 }
 
+.aboutfooter{;
+	position: absolute;;
+	left: 0;;
+	right: 0;;
+	margin-top: 50%;;
+	background-color: black;;
+	
+
+}
+
+
+
+
+
+ul.footernav{;
+	width: 100%;;
+	text-align: center;
+
+}
+
+
+
+
+
+
+.footernav li{
+	display: inline;
+
+}
+
+
+
+
+
+
+
+.aboutfooter span{
+	color: aliceblue;;;
+
+}
+
+
+
+
+
+
+
+
+.aboutpage{;
+
+}
