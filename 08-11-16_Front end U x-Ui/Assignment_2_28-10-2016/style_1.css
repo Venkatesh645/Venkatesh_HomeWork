@@ -3,6 +3,10 @@
 	padding: 0px;
 }
 
+.carousel-caption h3{
+	font-size: 60px;
+}
+
 
 .socialicon{
 	width:25px;
@@ -12,11 +16,14 @@
 .search-field{
 	margin-left: 148px;
 }
-
+/*footter logo*/
+img.fotlogo {
+    width: 17%;
+}
 
 
 .menu-bar{
-	margin-left: 112px;
+	    margin-left: 258px;
 }
 
 .menu-bar li{
@@ -53,9 +60,17 @@ img#logo-icon {
 
 /*tagline*/
 h2.tagline {
-   border: 1px solid #f1f1f1;
+  box-shadow: 6px 5px 8px 2px #cacad4;
     padding: 8px;
     text-align: center;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.logo-text{
+	font-size: 40px;
+	font-weight: bolder;
 }
 
 
@@ -64,6 +79,11 @@ h2.tagline {
     border: 1px solid #f1f1f1;
     padding: 11px;
     margin-bottom: 12px;
+
+}
+.multilinetext:hover {
+   box-shadow: 1px 1px 1px 1px black;
+   
 
 }
 .multilinetext p{
@@ -106,7 +126,8 @@ h2.tagline {
    
 }
 img.back-top {
-    width: 3%;
+    width: 5%;
+    padding: 14px;
 }
 
 .container-fluid.footer {
@@ -164,6 +185,29 @@ img.back-top {
 	.search-field {
     margin-left: 0px;
     width: 200px;
+}
+
+.menu-bar{
+	    margin-left: 85px;
+}
+
+.menu-bar li{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.nav.navbar-nav.navbar-right {
+	display: none;
+}
+
+
+hr{
+	width: 20px;
 }
 
 }
