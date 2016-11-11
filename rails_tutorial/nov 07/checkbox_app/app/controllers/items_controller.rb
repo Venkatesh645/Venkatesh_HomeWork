@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    binding.pry
+   
   Product.find_by_id(params[:format])
 
     product=Product.find_by_id(params[:format])

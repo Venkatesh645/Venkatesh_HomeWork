@@ -1,7 +1,0 @@
-<h1>All Products</h1>
-
-<% @products.each do |i|  %>
-	<%= i.name  %>
-	<%= link_to 'add item', new_item_path  %>
-	<%= link_to 'List all items', list_items_path(i)  %><br>
-<% end %>
