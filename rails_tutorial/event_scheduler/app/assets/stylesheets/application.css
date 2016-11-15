@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_bootstrap
+ *= require_jquery-ui
+ */
+
+
+.addevent{
+margin-left: 70%;
+
+
+}
+
+
+
+.red-back{
+	background-color: red;
+
+}
+
+.white-color{
+	color: white;
+}
+
+.green-back{
+	background-color: green;
+
+}
+
+.status span{
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.status{
+	text-align: right;
+}
+
+.f-pad{
+	padding: 5px 0px;
+}
+/**************************navbar links*****************************/
+.logout, .login, .home, .signup {
+	background-color: #5CB85C;
+	margin: 10px 10px; 
+	border-radius: 5px;
+color: white;
+font-size: 15px;
+font-weight: bolder;
+}
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+.navbar-nav > li > a {
+	    padding-top: 10px;
+     padding-bottom: 10px; 
+}
+
+.login{
+	margin-right: 80px;
+}
+
+/************************************************************/
+.navbar-brand{
+	font-weight: bolder;
+	font-size: 30px;
+}
+
+.jumbotron{
+	margin:auto 300px;
+	background-color: #333333;
+	color: white;
+	text-align: center;
+	
+	height: 292px;
+
+}
+
+.jumbotron h2{
+	font-weight: bolder;
+}
+
+.ju-text{
+	margin-top: 15%;	
+	vertical-align: sub;
+}
