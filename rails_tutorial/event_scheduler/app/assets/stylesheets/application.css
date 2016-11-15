@@ -18,9 +18,10 @@
 
 
 .addevent{
-margin-left: 70%;
-
-
+margin-left: 84%;
+margin-bottom: 10px;
+background-color: #F0AD4E;
+border-color: #F0AD4E;
 }
 
 
@@ -95,4 +96,26 @@ font-weight: bolder;
 .ju-text{
 	margin-top: 15%;	
 	vertical-align: sub;
+}
+
+
+/*/////////////////user details show///////////////////////////////*/
+
+.userdetails{
+	text-align: center;
+}
+
+.name{
+	text-align: right;
+}
+.value{
+	text-align: left;
+}
+
+.register{
+	text-align: center;
+}
+
+.createevent-title{
+	text-align: center;
 }

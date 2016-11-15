@@ -12,7 +12,7 @@ class EventsController < ApplicationController
 
 	def index
 		# binding.pry
-		@events=current_user.events
+		@events=Event.all
 
 	end
 
@@ -29,6 +29,7 @@ class EventsController < ApplicationController
 	def edit
 		@users=User.all
 		@event=Event.find(params["event_id"])
+		@current_event_user=@event.users
 	end
 
 	def update

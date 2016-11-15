@@ -7,7 +7,7 @@
 		
 	<% @events.each do |e| %>
 <div class="well">
-	<strong>Event : </strong><%= link_to e.title, edit_event_path(current_user,e) %><br>
+	<strong>Event : </strong><%= link_to e.title, edit_event_path(e) %><br>
 	<strong>Organiser : </strong>	<%= User.find(e.owner_id).firstname%>&nbsp;<%= User.find(e.owner_id).lastname%><br>
   
   <a href="#" data-toggle="modal" data-target="#myModal-<%= e.id%>">Participents</a><br><br>
@@ -24,7 +24,9 @@
   </div>   
 <% end %>
   </div>
-  <%= link_to 'Delete event', delete_event_path(current_user, e), method: :delete, "class" => "btn btn-primary"  %>
+  <% if current_user.id== e.owner_id%>
+  <%= link_to 'Delete event', delete_event_path(e), method: :delete, "class" => "btn btn-primary"  %>
+  <% end %>
 <!-- /////////////////////////////////////////////////////////// -->
 	
 <div class="container">

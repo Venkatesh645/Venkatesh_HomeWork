@@ -2,8 +2,10 @@
 <div class="container">
 <div class="row">
 <div class="col-md-6 col-md-offset-3 well">
+
+<% if current_user.id == Event.find(params["event_id"]).owner_id%>
 <h1>Edit Event</h1>
-<%= form_for :event, url: update_event_path(current_user,@event), method: :patch do |f| %>
+<%= form_for :event, url: update_event_path(@event), method: :patch do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title, "class" => "form-control", "required" => "true" %>
@@ -50,3 +52,55 @@
 	<%= f.submit "update event" %>
 </p>
 <% end %>
+
+
+
+
+<!-- ************************************************************************ -->
+<% else %>
+<h1> Event details</h1>
+<%= form_for :event, url: update_event_path(@event), method: :patch do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, "class" => "form-control", "required" => "true", "disabled"=>"true"%>
+  </p>
+ 
+  <p>
+    <%= f.label :venue %><br>
+    <%= f.text_field :venue, "class" => "form-control" , "required" => "true", "disabled"=>"true" %>
+  </p>
+
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date, "class" => "form-control" , "required" => "true", "id" => "datepicker", "disabled"=>"true" %>
+  </p>
+  <p>
+    <%= f.label :time %><br>
+    <%= f.time_field :time, "class" => "form-control" , "required" => "true" , "id" => "timepicker", "disabled"=>"true"%>
+  </p>
+  <p>
+    <%= f.label :desc %><br>
+    <%= f.text_area :desc, "class" => "form-control" , "required" => "true", "disabled"=>"true" %>
+  </p>
+
+ 
+
+
+<%= f.fields_for :partcipent  do |ff| %>
+<h1>List of Participents</h1>
+<% @current_event_user.each do |t| %>
+ <ul>
+  <li><%=  t.firstname.upcase %>&nbsp; <%=  t.lastname.upcase %><br></li>
+</ul>
+  <% end %>
+  
+
+<% end %>
+
+<br>
+<p>
+  <%= f.submit "update event", "disabled"=>"true" %>
+</p>
+<% end %>
+<% end %>
+</div></div></div>

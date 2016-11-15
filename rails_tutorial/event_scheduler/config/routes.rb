@@ -23,17 +23,17 @@ get "/user/:id" => "users#show", as: :show_user
 
 # ****************************************************
 
-get "/users/:user_id/events" => "events#index", as: :list_events
+get "/events" => "events#index", as: :list_events
 
-get "/users/:user_id/events/new" => "events#new", as: :new_event
+get "/events/new" => "events#new", as: :new_event
 
-post "/users/:user_id/events" => "events#create", as: :create_event
+post "/events" => "events#create", as: :create_event
 
-get "/users/:user_id/events/:event_id/edit" => "events#edit", as: :edit_event
+get "/events/:event_id/edit" => "events#edit", as: :edit_event
 
-patch "/users/:user_id/events/:event_id" => "events#update", as: :update_event
+patch "/events/:event_id" => "events#update", as: :update_event
 
-delete "/users/:user_id/events/:id" => "events#destroy" , as: :delete_event
+delete "/events/:id" => "events#destroy" , as: :delete_event
 # resources :sessions
 
 
