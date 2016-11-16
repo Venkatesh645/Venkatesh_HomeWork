@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	
+	before_action :must_login, only: [ :destroy ]
 
   def new
   end

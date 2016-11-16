@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	before_action :must_login, only: [:show]
+
+
 	def welcome
 		
 	end
@@ -23,6 +26,10 @@ class UsersController < ApplicationController
 			redirect_to root_path
 		end
 		
+	end
+
+	def edit
+		@user=current_user
 	end
 
 	private
