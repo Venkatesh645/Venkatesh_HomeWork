@@ -1,16 +1,20 @@
-<%= link_to 'create new event', new_event_path, "class" => "addevent btn btn-primary"  %>
+ <button type="button" class = "addevent btn btn-primary"  data-toggle="modal" data-target="#myModal">Create new event</button>
 
 <div class="container">
-<div class="row">
-<div class="col-md-6">
-<div >
+
+
 		
 	<% @events.each do |e| %>
-<div class="well">
-	<strong>Event : </strong><%= link_to e.title, edit_event_path(e) %><br>
+
+<div class="row">
+<div class="col-md-6 well">
+
+
+
+	<strong>Event : </strong><%= link_to e.title.capitalize, edit_event_path(e) %><br>
 	<strong>Organiser : </strong>	<%= User.find(e.owner_id).firstname%>&nbsp;<%= User.find(e.owner_id).lastname%><br>
   
-  <a href="#" data-toggle="modal" data-target="#myModal-<%= e.id%>">Participents</a><br><br>
+  <a href="#" data-toggle="modal" data-target="#myModal-<%= e.id%>">Participants</a><br><br>
 
  <div class="status">
   <% if e.status== nil %>
@@ -25,13 +29,13 @@
 <% end %>
   </div>
   <% if current_user.id== e.owner_id%>
-  <%= link_to 'Delete event', delete_event_path(e), method: :delete, "class" => "btn btn-primary"  %>
+  <%= link_to 'Delete event', delete_event_path(e), method: :delete, data: { confirm: 'Are you sure?' } ,"class" => "btn btn-primary"  %>
   <% end %>
-<!-- /////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////Participants //////////////////////////////// -->
 	
 <div class="container">
  
-  <!-- Trigger the modal with a button -->
+
  
   <!-- Modal -->
   <div class="modal fade" id="myModal-<%= e.id%>" role="dialog">
@@ -46,7 +50,7 @@
         <div class="modal-body">
        
           <table class="table">
-          <tr>  <th>List of Participents</th></tr>
+          <tr>  <th>List of Participants</th></tr>
           	<% e.users.each do |u| %>
     
           	<tr>
@@ -70,16 +74,16 @@
 
 
 <!-- ///////////////////////////////////////////////////////////////// -->
-</div>
-			<% end %><!-- end of loop -->
-</div>
+
+		
+
 </div>
 
 
 <div class="col-md-6">
 
 	
-		<% @events.each do |e| %>
+		
     <div class="well">
     
 <div class="form-group">
@@ -143,10 +147,14 @@
   </div>
 		</div >
 		
-			<% end %>
+			
 </div>
-
+<% end %>
 </div><!-- row -->
 </div><!-- container -->
 
 
+
+<!-- ********************************Create event****************************************** -->
+
+ <%= render "partials/create_event" %>

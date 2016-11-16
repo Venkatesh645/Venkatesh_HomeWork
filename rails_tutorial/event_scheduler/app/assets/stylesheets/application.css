@@ -17,13 +17,17 @@
  */
 
 
+
 .addevent{
-margin-left: 84%;
+margin-left: 83%;
 margin-bottom: 10px;
 background-color: #F0AD4E;
 border-color: #F0AD4E;
 }
 
+label.error{
+	color: red;
+}
 
 
 .red-back{
@@ -119,3 +123,40 @@ font-weight: bolder;
 .createevent-title{
 	text-align: center;
 }
+
+
+/*/////////////////////////////////////////////////////////////*/
+
+.green{
+	color: green;
+}
+
+.twitter{
+	text-align: center;
+}
+
+/*///////////////////////footer @ bottom/////////////////////////////////////*/
+
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to list_events_path(current_user)
   	else
       flash[:danger]="email or password is incorrect"
-      render 'new'
+      redirect_to root_path
   	end
   end
 

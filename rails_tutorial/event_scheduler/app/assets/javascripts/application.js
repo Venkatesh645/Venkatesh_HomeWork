@@ -20,21 +20,35 @@
 
  $("document").ready(function(){
 
-$(document).ready(function () {
+$.validator.addMethod('strongPassword', function(value,element){
+	return this.optional(element)
+	|| value.length >=6
+	&& /\d/.test(value)
+	&& /[a-z]/i.test(value);
+
+}, "Password must have atleast one alphabet (upper case & lower case each) & one digit & one special charecter ")
+
+$.validator.addMethod('phonenumber', function(value,element){
+	return this.optional(element)
+	|| value.length >=10
+	&& /\d/.test(value);
+},"must contain only digits")
+
+
 $("#signupform").validate({
 
 rules: 
 {
-"user[email]": {required: true, email: true, uniqueEmail: true},
-"user[password]": {required: true, minlength: 6},
+"user[email]": {required: true, email: true},
+"user[password]": {required: true, strongPassword: true },
 "user[password_confirmation]": {required: true, equalTo: "#user_password"},
 "user[firstname]": {required: true},
 "user[lastname]": {required: true},
 "user[username]": {required: true},
-"user[phonenumber]": {required: true}
+"user[phone]": {required: true, phonenumber: true}
 }
 });
-});
+
 
 
 
@@ -43,5 +57,25 @@ rules:
 
 
 
+$("#loginform").validate({
+
+rules: 
+{
+"login[email]": {required: true, email: true},
+"login[password]": {required: true, minlength: 8},
+
+}
+});
+
+
+
+$("#myModal-login2").modal('show');
+
+
+
+
 
  })
+
+
+

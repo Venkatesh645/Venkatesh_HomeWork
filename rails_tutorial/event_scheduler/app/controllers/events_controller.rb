@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 	def index
 		# binding.pry
 		@events=Event.all
-
+		@users=User.all
 	end
 
 
@@ -21,8 +21,9 @@ class EventsController < ApplicationController
 		# binding.pry
 		User.find(current_user).events << Event.new(event_params)
 		# binding.pry
+		if params["user_ids"]
 		Event.last.users << User.find(params["user_ids"])
-		
+		end
 		 redirect_to list_events_path
 	end
 
@@ -55,7 +56,9 @@ class EventsController < ApplicationController
 	
 
 
-	
+	def sample
+		
+	end
 	
 
 

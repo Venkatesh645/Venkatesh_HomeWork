@@ -35,7 +35,10 @@ patch "/events/:event_id" => "events#update", as: :update_event
 
 delete "/events/:id" => "events#destroy" , as: :delete_event
 # resources :sessions
+# *********************************************************************************
 
+
+  get '/sample' => 'events#sample', as: :sample
 
 #  Prefix Verb   URI Pattern                               Controller#Action
 #     user_events GET    /users/:user_id/events(.:format)          events#index

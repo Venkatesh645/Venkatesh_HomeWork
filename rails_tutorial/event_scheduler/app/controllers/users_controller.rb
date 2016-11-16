@@ -12,15 +12,15 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		binding.pry
+		# binding.pry
 		@user=User.new(user_params)
 		if @user.save
 			flash[:success]="User created successfully"
 			redirect_to login_path
 		else
 			flash[:danger]="Failed to create the user try again"
-			binding.pry
-			redirect_to :back
+			# binding.pry
+			redirect_to root_path
 		end
 		
 	end
