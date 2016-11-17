@@ -21,19 +21,29 @@
  $("document").ready(function(){
 
 $.validator.addMethod('strongPassword', function(value,element){
-	return this.optional(element)
-	|| value.length >=6
-	&& /\d/.test(value)
-	&& /[a-z]/i.test(value)
-	&& /[A-Z]/i.test(value);
+	return (/[a-z]/.test(value) && /[A-Z]/.test(value) && /[0-9]/.test(value) && /[~!@#$%^&*()]/.test(value) && value.length >=8);
 
 }, "Password must have one alphabet (upper case & lower case each) & one digit & one special charecter ")
+
+
+
+$.validator.addMethod('alphabetsOnly', function(value,element){
+	return (/[a-z]/.test(value) || /[A-Z]/.test(value) && value.length >=1);
+
+}, "First name must contain alphabets only ")
+
+
 
 $.validator.addMethod('phonenumber', function(value,element){
 	return this.optional(element)
 	|| value.length >=10
 	&& /\d/.test(value);
 },"must contain only digits")
+
+
+
+
+
 
 
 $("#signupform").validate({
@@ -43,7 +53,7 @@ rules:
 "user[email]": {required: true, email: true},
 "user[password]": {required: true, strongPassword: true },
 "user[password_confirmation]": {required: true, equalTo: "#user_password"},
-"user[firstname]": {required: true},
+"user[firstname]": {required: true , alphabetsOnly: true},
 "user[lastname]": {required: true},
 "user[username]": {required: true},
 "user[phone]": {required: true, phonenumber: true}

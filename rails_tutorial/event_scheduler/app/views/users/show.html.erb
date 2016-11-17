@@ -50,5 +50,9 @@
 
 
 
-
-<%= link_to 'BACK',list_events_path(current_user)%>
+<div class="user-edit">
+	
+<%= link_to '<< BACK',list_events_path(current_user)%>
+|
+<%= link_to 'EDIT >>',edit_user_path(current_user)%>
+</div>
