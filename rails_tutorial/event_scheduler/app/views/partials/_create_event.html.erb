@@ -29,11 +29,11 @@
 
   <p>
     <%= f.label :date %><br>
-    <%= f.date_field :date, "class" => "form-control" , "required" => "true"%>
+    <%= f.date_select :date,  start_year: Date.today.year,start_month: Date.today.month   , "class" => "form-control" , "required" => "true"%>
   </p>
   <p>
     <%= f.label :time %><br>
-    <%= f.time_field :time, "class" => "form-control", "required" => "true"%>
+    <%= f.time_select :time, "class" => "form-control", "required" => "true"%>
   </p>
   <p>
     <%= f.label :desc %><br>

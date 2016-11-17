@@ -1,4 +1,7 @@
 <%= form_for :task, :html => {:id => "new_task"} , url: create_task_path, remote: true do |f| %>
+<div class="well">
+  
+  
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -12,4 +15,5 @@
   <p>
     <%= f.submit %>
   </p>
+</div>
 <% end %>

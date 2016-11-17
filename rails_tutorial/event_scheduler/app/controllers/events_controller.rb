@@ -56,9 +56,7 @@ class EventsController < ApplicationController
 	
 
 
-	def sample
-		
-	end
+	
 	
 
 

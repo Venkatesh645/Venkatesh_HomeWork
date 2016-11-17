@@ -1,7 +1,5 @@
 <div class="container">
-  <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+  
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -14,7 +12,7 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-         <%= form_for :task. url: update_task_path(@task), remote: true  do |t|  %>
+         <%= form_for :task, url: update_task_path(@task), remote: true, method: :patch  do |t|  %>
 
          <p>
            <%= t.label :title %>
@@ -23,11 +21,11 @@
 
           <p>
            <%= t.label :Description %>
-           <%= t.text_field :Desc %>
+           <%= t.text_field :desc %>
          </p>
 
          <p>
-           <% t.submit %>
+           <%= t.submit %>
          </p>
          <% end %>
         </div>

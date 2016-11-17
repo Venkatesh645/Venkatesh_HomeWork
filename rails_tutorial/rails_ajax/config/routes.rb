@@ -12,6 +12,8 @@ get "/tasks/:id" => "tasks#show", as: :show_task
 
 patch "/tasks/:id" => "tasks#update" , as: :update_task
 
+delete "/tasks/:id" => "tasks#delete", as: :delete_task
+
 #  Prefix Verb   URI Pattern               Controller#Action
 #     tasks GET    /tasks(.:format)          tasks#index
 #           POST   /tasks(.:format)          tasks#create
@@ -20,7 +22,7 @@ patch "/tasks/:id" => "tasks#update" , as: :update_task
 #      task GET    /tasks/:id(.:format)      tasks#show
 #           PATCH  /tasks/:id(.:format)      tasks#update
 #           PUT    /tasks/:id(.:format)      tasks#update
-#           DELETE /tasks/:id(.:format)      tasks#destroy
+          # DELETE /tasks/:id(.:format)      tasks#destroy
 
 
 

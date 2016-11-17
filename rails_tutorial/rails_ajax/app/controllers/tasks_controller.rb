@@ -11,10 +11,20 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
 
-    respond_to do |formate|
+    respond_to do |format|
       format.html {redirect_to root_path}
       format.js
     end
+  end
+
+  def update
+     @task = Task.find(params[:id])
+     @task.update(task_params)
+     respond_to do |format|
+      format.html {redirect_to root_path}
+      
+    end
+
   end
 
   def create
@@ -26,7 +36,24 @@ class TasksController < ApplicationController
      # @tasks=Task.all
   	respond_to do |format|
   		format.html {redirect_to root_path}
-  		format.js
+  		
   	end
+  end
+
+  def delete
+    @task = Task.find(params[:id])
+    @task.destroy
+    respond_to do |format|
+      format.html {redirect_to new_task_path}
+      
+    end
+
+  end
+
+
+
+  private
+  def task_params
+    params.require(:task).permit(:title, :desc)
   end
 end

@@ -8,7 +8,8 @@
 	
 	<strong>Title :</strong> <%=t.title  %><br>
 	<strong>Description :</strong><%= t.desc %><br>
-	<%= link_to "show", show_task_path(t), remote: true %>
+	<%= link_to "edit", show_task_path(t), remote: true %><br>
+	<%= link_to "delete", delete_task_path(t),method: :delete , remote: true %>	
 	
 </div><hr>
 <% end %>
