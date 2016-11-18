@@ -104,18 +104,45 @@ $("document").ready(function(){
 })
 
 // *******************************************time picker***************************************
+// $("document").ready(function(){
+
+// 	// if ($("#datepicker").val()==new Date().getMonth()+1+"/"+new Date().getDate()+"/"+new Date().getFullYear()){
+// 	// 	mintime=new Date().getHours();
+// 	// }
+
+
+
+// $('#durationExample').timepicker({
+//     'minTime': mintime,
+//     'maxTime': '11:30pm',
+//     'showDuration': true
+// });
+
+// });
+
+
+
+// ****************************************file upload********************************
 $("document").ready(function(){
 
-	// if ($("#datepicker").val()==new Date().getMonth()+1+"/"+new Date().getDate()+"/"+new Date().getFullYear()){
-	// 	mintime=new Date().getHours();
-	// }
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#user_attachment").change(function(){
+        readURL(this);
+    });
 
 
 
-$('#durationExample').timepicker({
-    'minTime': mintime,
-    'maxTime': '11:30pm',
-    'showDuration': true
+
 });
-
-})
+   

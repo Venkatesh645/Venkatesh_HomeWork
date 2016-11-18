@@ -19,7 +19,13 @@
         
     
       <% elsif logged_in? %>
+        
+        <% if current_user.attachment.present? %>
+      <li><%= image_tag(current_user.attachment, size: "60x60", alt: "profile ing", "class" => "img-circle")%></li>
+        <% else %>
       <li><%= image_tag("avatar.jpg", size: "60x60", alt: "profile ing", "class" => "img-circle")%></li>
+        <% end %>
+
       <li> 
   <%= link_to User.find(current_user.id).firstname.upcase+" "+User.find(current_user.id).lastname.upcase,show_user_path(current_user) %></li>
   <li class="logout"><%= link_to "invitations", user_invitation_path, remote: true  %></li>

@@ -15,6 +15,8 @@ get "/user/:id/edit" => "users#edit", as: :edit_user
 
 patch "user/:id" => "users#update", as: :update_user
 
+delete "user/delete" => "users#destroy", as: :delete_user
+
 get "events/invitations" => "events#invitation", as: :user_invitation
 # *********************************************************
 
@@ -43,8 +45,8 @@ delete "/events/:id" => "events#destroy" , as: :delete_event
 # resources :sessions
 # *********************************************************************************
 
+resources :profile
 
-  get '/sample' => 'events#sample', as: :sample
 
 #  Prefix Verb   URI Pattern                               Controller#Action
 #     user_events GET    /users/:user_id/events(.:format)          events#index

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-	
-	has_many :events, foreign_key: :owner_id
+	mount_uploader :attachment, AttachmentUploader
+	has_many :events, foreign_key: :owner_id, dependent: :destroy
 	has_many :participents
 	has_secure_password
 

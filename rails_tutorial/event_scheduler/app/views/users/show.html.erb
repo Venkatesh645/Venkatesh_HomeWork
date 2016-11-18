@@ -56,3 +56,7 @@
 |
 <%= link_to 'EDIT >>',edit_user_path(current_user)%>
 </div>
+
+<div class="deleteAccount">
+	<%= link_to "Delete Account" , delete_user_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

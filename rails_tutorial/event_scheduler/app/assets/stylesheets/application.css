@@ -144,6 +144,18 @@ font-weight: bolder;
 	text-align: center;
 }
 
+.deleteAccount{
+
+	margin-top: 10px;
+	text-align: center;
+}
+
+.deleteAccount a{
+	padding: 10px;
+	background-color: red;
+	color: white;
+}
+
 /*///////////////////////footer @ bottom/////////////////////////////////////*/
 
 

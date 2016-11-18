@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-	
+	before_action :must_login, only: [:show, :edit, :new, :index, :create, :update, :destroy, :invitation]
 
 	def new
 		# binding.pry
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
 
 	def create
-		# binding.pry
+		binding.pry
 		User.find(current_user).events << Event.new(event_params)
 		# binding.pry
 		if params["user_ids"]

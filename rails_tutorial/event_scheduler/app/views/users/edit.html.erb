@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3 well">
       <%= form_for :user, url: update_user_path(@user), method: :patch do |f| %>
   <p>
     <%= f.label :FirstName %><br>
@@ -19,6 +19,11 @@
  <p>
     <%= f.label :Email %><br>
     <%= f.text_field :email, "class" => "form-control" , "required" => "true", "disabled"=>"true" %>
+  </p>
+
+  <p>
+  <strong>Select profile picture :</strong>
+    <%= f.file_field :attachment%>
   </p>
 
 

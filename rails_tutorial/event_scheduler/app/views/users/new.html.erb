@@ -52,6 +52,11 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, "class" => "form-control password-confirm", "required" => "true" %>
   </p>
+ <p>
+  <strong>Upload your profile image :</strong>
+    <%= f.file_field :attachment %><br>
+    <img id="blah" src="../../assets/avatar.jpg" width="100px" height="100px" alt="your image" />
+  </p>
  
   <p>
     <%= f.submit "Register User" %>
