@@ -15,6 +15,19 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+<p>
+  
+  <%= select_date Date.today, prefix: :start_date %>
+</p>
+
+<p>
+  <%= date_select :person, :birth_date %>
+</p>
+
+
+   <p>Date: <%= f.text_field :name, :id=>"datepicker", :readonly=>"true" %></p>
+
   <div class="actions">
     <%= f.submit %>
   </div>

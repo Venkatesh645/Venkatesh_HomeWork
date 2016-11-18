@@ -22,8 +22,8 @@ class UsersController < ApplicationController
 			flash[:success]="User created successfully"
 			redirect_to login_path
 		else
-			flash[:danger]="Failed to create the user try again"
-		binding.pry		
+			# flash[:danger]="Failed to create the user try again"
+			
 			redirect_to root_path
 		end
 		
