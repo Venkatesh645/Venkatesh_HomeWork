@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user =User.find(params[:id])
+		@user =current_user
 	end
 
 	def create
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 			flash[:success]="User created successfully"
 			redirect_to login_path
 		else
-			# flash[:danger]="Failed to create the user try again"
+			flash[:danger]="Failed to create the user try again"
 			
 			redirect_to root_path
 		end

@@ -29,7 +29,7 @@
                     <% @user.errors.full_messages.each do |msg| %>
                       <li><% flash[:danger]= msg %></li>
 
-                      <% binding.pry %>
+                     
                     <% end %>
                   </ul>
                 </div>
@@ -75,7 +75,7 @@
    <p>
   <strong>Upload your profile image :</strong>
     <%= f.file_field :attachment %><br>
-    <img id="blah" src="../../assets/avatar.jpg" width="100px" height="100px" alt="your image" />
+    <%= image_tag('avatar.jpg', size: "100x100", alt: "profile ing", "class" => "img-circle", :id => "blah")%>
   </p>
 
 

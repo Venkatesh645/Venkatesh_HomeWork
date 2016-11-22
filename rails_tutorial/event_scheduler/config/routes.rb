@@ -9,9 +9,9 @@ get "user/signup" => "users#new", as: :signup
 
 post "/users" => "users#create", as: :user_create
 
-get "/user/:id" => "users#show", as: :show_user
+get "/user/show" => "users#show", as: :show_user
 
-get "/user/:id/edit" => "users#edit", as: :edit_user
+get "/user/edit" => "users#edit", as: :edit_user
 
 patch "user/:id" => "users#update", as: :update_user
 
