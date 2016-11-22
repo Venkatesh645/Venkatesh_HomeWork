@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="newApp">
+<head>
+    <title></title>
+    <script type="text/javascript" src="angular.min.js"></script>
+
+    <style type="text/css">
+    	.hide{
+    		display: none;
+    	}
+
+    	.show{
+    		display: block;
+    	}
+    </style>
+</head>
+<body ng-controller="mainController">
+
+<button ng-click="show()" ng-class="{'hide' : i==true, 'show' : i==false}">SHOW</button>
+<button ng-click="hide()"  ng-class="{'show' : i==true, 'hide' : i==false}">HIDE</button>
+
+	<div ng-class="{'hide' : i==false, 'show' : i==true }">
+		hai
+	</div>
+</body>
+<script type="text/javascript">
+		var app = angular.module('newApp', []);
+		app.controller('mainController', function($scope){
+// *******************************************************
+	$scope.show=function(){
+			
+			$scope.i=true;
+	};
+
+	$scope.hide=function(){
+		
+			$scope.i=false;	
+	};
+
+
+// *********************************************************			
+		});
+</script>
+
+
+</html>

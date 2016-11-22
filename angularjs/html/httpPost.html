@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="newApp">
+<head>
+    <title></title>
+    <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+
+
+<form>
+    <input type="text" ng-model="student.name">
+    <button ng-click="callSubmit()">Submit</button>
+</form>
+    
+<!-- ************************************************************* -->
+    <table border="1">
+
+        <tr>
+            <th>Student Name</th>
+        </tr>
+        
+            <tr ng-repeat="x in names" >
+            <td>{{x.name}}</td>
+            
+        </tr>
+        <td ng-bind="student.name"></td>
+    </table>
+
+    
+
+
+    <script type="text/javascript">
+        var app =angular.module('newApp', []);
+
+        app.controller('mainController' , function($scope,$http){
+            $http.get('http://localhost:3000/students').success(function(response){
+                $scope.names=response.data;
+            });
+
+            $scope.callSubmit=function(){
+
+            $http.post('http://localhost:3000/students',$scope.student).success(function(response){
+                $scope.status=response.data;
+            });
+                
+            }
+
+
+
+        });
+    </script>
+</body>
+</html>
