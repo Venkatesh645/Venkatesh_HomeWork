@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html ng-app="directoryApp" >
+<head>
+  <title></title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" src="angular.min.js"></script>
+
+  
+    <style type="text/css">
+      .over_fifty{
+          background-color: green;
+          color: white;
+        }
+
+      .under_fifty{
+            background-color: red;
+          color: white;
+      }
+      .fifty{
+        background-color: grey;
+        color: white;
+      }
+
+/******************************Hide and show****************************/
+    .show-btn{
+      display: none;
+    }
+
+
+      .hide{
+        display: none;
+      }
+
+      .show{
+        display: block;
+      }
+
+ul.ng-enter{
+  transition: 0.1s ease all;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+
+
+  ul.ng-enter.ng-enter-active {
+        opacity:1;
+        transform:translateX(0);
+    }
+    ul.ng-leave {
+        transition:0.3s ease all;
+        opacity: 1;
+        transform:translateX(0);    
+    }
+
+    ul.ng-leave.ng-leave-active {
+        opacity:0;
+        transform:translateX(-100%);
+    }
+li{
+  display: flex;
+}
+
+li span{
+  margin-right: 20px;
+}
+
+li img{
+  border-radius: 50%;
+}
+
+     
+</style>
+</head>
+
+
+
+<body  ng-controller="directoryCtrl as dirList">
+
+<!-- <button ng-click="dirList.show()" class="show-btn" ng-class="{'hide' : dirList.i==true, 'show' : dirList.i==false}">SHOW</button>
+<button ng-click="dirList.hide()"  ng-class="{'show' : dirList.i==true, 'hide' : dirList.i==false}">HIDE</button>
+ --><hr>
+Hide/Show : <input type="checkbox" ng-model="dirList.i" >
+<hr>
+<!-- <ul ng-class="{'hide' : dirList.i==false, 'show' : dirList.i==true }">
+  <li ng-repeat="x in dirList.list"  ng-class="{'over_fifty' : x.age >50, 'under_fifty' : x.age < 50, 'fifty' : x.age == 50 }">
+    {{$index + 1}} | {{x.name}} - {{x.age}}
+  </li>
+</ul> -->
+
+<h1>Toggle</h1>
+
+<!-- <div ng-include="'include1.html'"></div> -->
+<ul ng-class="{'hide' : dirList.i==false, 'show' : dirList.i==true }">
+ <li ng-repeat="x in dirList.list   " ng-class=""><span>{{x.name | uppercase}} {{x.age | currency:'&#8377;':0}}</span> <img ng-src="{{x.img}}"> </li>
+</ul>
+
+
+<button ng-click="dirList.show()" class="show-btn" ng-class="{'hide' : dirList.i==true, 'show' : dirList.i==false}">SHOW</button>
+<button ng-click="dirList.hide()"  ng-class="{'show' : dirList.i==true, 'hide' : dirList.i==false}">HIDE</button>
+</body>
+
+<!-- ********************************************* -->
+<button ng-if="dirList.flag" ng-click="dirList.togle()">SHOW</button>
+<button ng-if="!dirList.flag"  ng-click="dirList.togle()">HIDE</button><br>
+
+<button ng-show="dirList.flag" ng-click="dirList.togle()">SHOW</button>
+<button ng-show="!dirList.flag"  ng-click="dirList.togle()">HIDE</button>
+<!-- <div ng-if="dirList.flag">
+  ng-if
+</div>
+
+<div ng-show="!dirList.flag">
+  ng-showwwwwwwwww
+</div> -->
+
+<div ng-hide="dirList.flag">
+  ng-hide
+</div>
+
+
+<script type="text/javascript">
+  var app= angular.module('directoryApp', []);
+
+  app.controller('directoryCtrl', function(){
+
+
+
+    var dirList = this; //replacing the $scope as it raises the conflict when two controllers are used
+   dirList.list=[{name:"Qwinix", age:20, img: "https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"},
+                  {name:"abc", age:150, img: "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" },
+                  {name:"mysore", age:50, img: "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg"},
+                  {name:"zyc", age:1500, img: "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg"},
+                  {name:"c", age:0, img: "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg"}
+                ];
+
+
+
+    dirList.add=function(){
+
+      if(dirList.age >= 10 && dirList.age <= 99 || dirList.age <= -10 && dirList.age >= -99){
+
+      dirList.list.push({name:dirList.name,age:dirList.age});
+      }else{
+        alert('enter valid age');
+      }
+    
+      dirList.name='';
+      dirList.age='';
+    };
+
+
+    // *******************************************************
+  dirList.show=function(){
+      
+      dirList.i=true;
+  };
+
+  dirList.hide=function(){
+    
+      dirList.i=false; 
+  };
+
+// dirList.a=function(value){
+//   dirList.f = value;
+// }
+// *********************************************************      
+dirList.flag=false;
+dirList.togle=function(){
+  dirList.flag = !dirList.flag;
+
+  console.log(dirList.flag);
+}
+
+
+      });
+
+
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+</html>

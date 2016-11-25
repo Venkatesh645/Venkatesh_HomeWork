@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="directoryApp" >
+<head>
+	<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script type="text/javascript" src="directory.js"></script>
+</head>
+<body style="background-color:{{name}};" ng-controller="directoryCtrl">
+<div >
+	
+
+	<input type="text" ng-model="search">
+
+</div>
+
+<h1>list1</h1>
+<ul >
+
+	<div ng-repeat="x in list | filter:search">{{x.name+" - "+x.age}}</div>
+
+</ul>
+<h1>list2</h1>
+<ul >
+
+	<li ng-repeat="x in list1 | filter:search">{{x.name+" - "+x.age}}</li>
+
+</ul>
+<!-- <h2>Array inside array</h2>
+<ul>
+
+	<li ng-repeat="x in list1 | filter:search">{{x[0]+" - "+x[1]}}</li>
+
+</ul>
+ --><!-- <h2>array inside object</h2>
+
+<ul ng-init="list2={ a:['venkatesh',20],b:['Qwinix',10],c:['Mysore',100]}">
+	<li ng-repeat="x in list2">{{x[0]+"-"+x[1] }}</li>
+	<li ng-repeat="x in list2">{{x}}</li>
+</ul> -->
+	<button ng-click="submit()">click Me</button>
+</body>
+</html>
+

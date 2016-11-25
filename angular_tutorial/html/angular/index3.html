@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head >
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body >
+	<ul ng-controller="mainCtrl">
+		<li ng-repeat="x in names">
+			Name :{{x.user_name}}<br>
+			Age :	{{user_age}}<br><hr>
+		
+			</li>
+
+	</ul>
+
+<script type="text/javascript">
+		var app =angular.module('myApp', []);
+		app.controller('mainCtrl' , function($scope, $http){
+			$http.get("http://localhost:3000/api/v1/list/users")
+			.success(function(response){
+				$scope.names=response.data;
+			});
+		});
+</script>
+</body>
+</html>

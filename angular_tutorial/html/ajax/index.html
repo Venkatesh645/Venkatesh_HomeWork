@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX</title>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$('document').ready(function(){
+			$('.btn').click(function(){
+				
+				$('.box').load("https://www.google.com" , function(responseTxt,statusTxt,jqXHR){
+						if(statusTxt=="success"){
+								alert('success');
+						}
+						if(statusTxt=="error"){
+								alert("Error:"+jqXHR.status +" "+jqXHR.statusTxt);
+							}
+						});
+				});
+				
+			}) ;
+		
+	</script>
+</head>
+<body>
+	<div class="box" style="border:1px solid red;">
+		<h2>Click button to load content</h2>
+	</div><br>
+
+
+
+
+
+<button type="button" class="btn">Load Content</button>
+</body>
+</html>

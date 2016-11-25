@@ -1,12 +1,15 @@
+module Api
+
+module V1
+
 class UsersController < ApplicationController
 	before_action :must_login, only: [:show, :edit, :update]
 
 	def welcome
-	
+		
 	end
 
 	def new
-		
 		@user=User.new
 	end
 
@@ -19,15 +22,15 @@ class UsersController < ApplicationController
 	end
 
 	def create
-	binding.pry
+
 		@user=User.new(user_params)
 		if @user.save
 			flash[:success]="User created successfully"
-			redirect_to login_path
+			render json: {message: @user}
 		else
 			flash[:danger]="Failed to create the user try again"
 			
-			redirect_to root_path
+			render json: {message: @user}
 		end
 		
 	end
@@ -36,7 +39,7 @@ class UsersController < ApplicationController
 		@user =User.find(params[:id])
 		if @user.update(user_params)
 		flash[:success]="User updated successfully"
-		redirect_to show_user_path
+		render json: {message: @user}
 	else
 			flash[:danger]="Failed to update user"
 
@@ -56,4 +59,7 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:firstname, :lastname, :username, :email, :phone, :password, :password_confirmation, :attachment)
 	end
+end
+
+end
 end

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="" >
+<head>
+	<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body style="background-color:{{name}};" >
+<div >
+	
+
+	<input type="text" ng-model="search">
+	<h1>Hai {{name}}</h1>
+</div>
+
+<h2>Object inside Array</h2>
+<ul ng-init="list=[{name:'venkatesh',age:20},{name:'Qwinix',age:10},{'name':'Mysore','age':100}]">
+
+	<li ng-repeat="x in list | filter:search">{{x.name+" - "+x.age}}</li>
+
+</ul>
+<h2>Array inside array</h2>
+<ul ng-init="list1=[['venkatesh',20],['Qwinix',10],['Mysore',100]]">
+
+	<li ng-repeat="x in list1 | filter:search">{{x[0]+" - "+x[1]}}</li>
+
+</ul>
+<h2>array inside object</h2>
+
+<ul ng-init="list2={ a:['venkatesh',20],b:['Qwinix',10],c:['Mysore',100]}">
+	<li ng-repeat="x in list2">{{x[0]+"-"+x[1] }}</li>
+	<li ng-repeat="x in list2">{{x}}</li>
+</ul>
+	
+</body>
+</html>
+

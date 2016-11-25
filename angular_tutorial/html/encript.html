@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>encript</title>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+ 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/aes-min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
+
+ </head>
+ <body>
+ <button onclick="encript('passwhvcdfdfsfjsffsjf')">click</button>
+
+
+
+<script type="text/javascript">
+
+
+ function encript(value) {
+    // var encryptedData = CryptoJS.AES.encrypt(angular.toJson(value), secretKey).toString();
+
+    var encryptedData = CryptoJS.SHA256(value).toString();
+    console.log(encryptedData);
+    
+}
+</script>
+ </body>
+ </html>

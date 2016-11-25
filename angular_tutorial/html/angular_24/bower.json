@@ -1,0 +1,17 @@
+{
+  "name": "angular_24",
+  "homepage": "https://github.com/Venkatesh645/Venkatesh_HomeWork",
+  "authors": [
+    "venkatesh s <vsanjeevagowda@qwinix.io>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
