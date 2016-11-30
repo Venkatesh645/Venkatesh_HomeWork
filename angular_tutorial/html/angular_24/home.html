@@ -1,0 +1,14 @@
+<a href="#/about">click</a><br>
+<input ng-model="showul" type="button" value="show">
+<input ng-model="hideul" type="button" value="hide">
+
+
+	<form ng-submit="dirList.add()"><!--Her also added dirList-->
+		<input type="text" ng-model="dirList.name" placeholder="Enter Name" autofocus="true">
+		<input type="number" ng-model="dirList.age" placeholder="Enter age">
+		<input type="submit" >														
+	</form>
+
+	<ul ng-class="{'hide': hideul, 'show': showul}">
+		<li ng-repeat="x in dirList.list   " ng-class=""><span>{{x.name | uppercase}} {{x.age | currency:'&#8377;':0}}</span> <img ng-src="{{x.img}}"> </li>
+	</ul>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head >
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.min.js"></script>
+</head>
+<body >
+	<div ng-controller="mainCtrl">
+	
+			status:{{status}}<br>
+			a_token:{{auth_token}}<br>
+			<button type="button" ng-click="request()">Request</button><br>
+	<form >
+	<!-- <input name="utf8" type="hidden" value="✓" ng-model="utf"><br> -->
+				<input type="hidden" name="authenticity_token" id="auth_value" ng-model="auth" ><br>
+				<input type="text" ng-model="name"><br>
+				<input type="submit" ng-click="sub()"><br>
+	</form>
+	
+
+			
+
+	</div>
+
+
+
+<script type="text/javascript">
+		var app =angular.module('myApp', ['ngCookies']);
+		// app.controller('mainCtrl' , function($scope, $http){
+		// 	$http.get("http://localhost:3000/api/v1/list/users")
+		// 	.success(function(response){
+		// 		$scope.names=response.data;
+		// 	});
+		// });
+app.controller('mainCtrl' , function($scope, $http, $cookies){
+
+$scope.sub=function(){
+		alert('aaa');
+debugger;
+var js={
+	
+		"authenticity_token":document.getElementById('auth_value').value,
+				"user":{
+										"name": $scope.name
+
+								}
+
+};
+
+console.log(js);
+
+			 $http.post('http://localhost:3000/users', js )
+			 .success(function(response) {
+                      $scope.status=response.data;
+                      console.log(response.data);
+                    });
+}
+
+// *********************************************
+
+$scope.request=function(){
+		$http.get('http://localhost:3000/users')
+
+			 .success(
+                    function(response) {
+                      $scope.status=response.users;
+                      document.getElementById('auth_value').value=response.auth_token;
+                   		$scope.auth_token=response.auth_token;
+                      }
+                );
+}
+
+
+
+
+
+
+
+
+		});
+
+
+
+
+</script>
+</body>
+</html>
+
+

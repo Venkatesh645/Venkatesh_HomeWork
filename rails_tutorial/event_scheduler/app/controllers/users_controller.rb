@@ -2,19 +2,15 @@ class UsersController < ApplicationController
 	before_action :must_login, only: [:show, :edit, :update]
 
 	def welcome
-<<<<<<< HEAD
+
 	
 	end
 
-	def new
-		
-=======
-		binding.pry
-	end
+	
 
 	def new
-		binding.pry
->>>>>>> 5ea599f722f24d17d5de51351167d45b1a2f8727
+	
+
 		@user=User.new
 	end
 
@@ -28,11 +24,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-<<<<<<< HEAD
-	binding.pry
-=======
 		binding.pry
->>>>>>> 5ea599f722f24d17d5de51351167d45b1a2f8727
 		@user=User.new(user_params)
 		if @user.save
 			flash[:success]="User created successfully"

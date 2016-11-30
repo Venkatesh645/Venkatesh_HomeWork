@@ -5,13 +5,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 </head>
 <body >
-	<ul ng-controller="mainCtrl">
+	<div ng-controller="mainCtrl">
 	
 			status:{{status}}
 		
 			
 
-	</ul>
+	</div>
 
 <script type="text/javascript">
 		var app =angular.module('myApp', []);
@@ -23,19 +23,12 @@
 		// });
 		app.controller('mainCtrl' , function($scope, $http){
 
-			$http({
-                    method: "post",
-                    url: "http://localhost:300/api/v1/create/user",
-                    
-                    data: {
-                        user_name: "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-                        user_age: 20
-                    }
-                })
+		$http.get('http://localhost:3000/users')
 
 			 .success(
-                    function( html ) {
-                      $scope.status=response.status;
+                    function(response) {
+                      $scope.status=response.data;
+                      console.log(response.data);
                     }
                 );
 		});

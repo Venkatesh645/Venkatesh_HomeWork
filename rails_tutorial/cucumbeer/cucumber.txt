@@ -1,0 +1,20 @@
+require 'watir-webdriver'
+
+b=Watir::Browser.new
+b.goto 'gmail.com'
+
+b.input(:id,"Email").wait_until_present
+
+b.input(:id,"Email").send_keys "rramuu1234@gmail.com"
+
+b.input(:id,"next").click
+
+b.input(:id,"Passwd").wait_until_present
+
+b.input(:id,"Passwd").send_keys "123456789"
+
+b.input(:id,"signIn").click
+
+b.element(:xpath => "//div[1]/div[2]/div[4]/div[1]/a/span").click
+
+b.element(:id, "gb_71").click

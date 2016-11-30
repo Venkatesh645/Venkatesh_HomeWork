@@ -1,0 +1,14 @@
+ {"utf8"=>"✓",
+ "authenticity_token"=>
+  "NGmHWxpc11d5FSMB7Z+OlVZjsC2qqqlyqZoGDeYOfcXLMT3Bie3/HnpQYn6MkZS7Kx8l5Xd8/mOH2OdRE8hPyg==",
+ "user"=>
+  {"firstname"=>"fvdf",
+   "lastname"=>"fv",
+   "username"=>"fv",
+   "email"=>"vsv@gmail.com",
+   "phone"=>"6548765457487",
+   "password"=>"123abcD*",
+   "password_confirmation"=>"123abcD*"},
+ "commit"=>"Register User",
+ "controller"=>"users",
+ "action"=>"create"}
