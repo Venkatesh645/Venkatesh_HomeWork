@@ -1,0 +1,17 @@
+{
+  "name": "angular1",
+  "authors": [
+    "venkatesh s <vsanjeevagowda@qwinix.io>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

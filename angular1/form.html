@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="directoryApp" >
+<head>
+	<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+		<script type="text/javascript" src="directory.js"></script>
+		<style type="text/css">
+			.over_fifty{
+					background-color: green;
+					color: white;
+				}
+
+			.under_fifty{
+						background-color: red;
+					color: white;
+			}
+			.fifty{
+				background-color: grey;
+				color: white;
+			}
+
+		/*	#items{
+				display: none;
+			}*/
+
+			.show{
+				display: block;
+			}
+
+			.hide{
+				display: none;
+			}
+
+li{
+	display: flex;
+}
+
+li span{
+	margin-right: 20px;
+}
+
+li img{
+	border-radius: 50%;
+}
+
+ul.ng-enter{
+	transition: 0.3s ease all;
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+
+
+  ul.ng-enter.ng-enter-active {
+        opacity:1;
+        transform:translateX(0);
+    }
+    ul.ng-leave {
+        transition:0.3s ease all;
+        opacity:1;
+        transfrom:translateX(0);    
+    }
+    ul.ng-leave.ng-leave-active {
+        opacity:0;
+        transform:translateX(-100%);
+    }
+
+
+
+		</style>
+</head>
+<body style="background-color:{{name}};" ng-controller="directoryCtrl as dirList"><!--Replaced as the this in script-->
+
+<input ng-model="showul" type="button" value="show">
+<input ng-model="hideul" type="button" value="hide">
+
+
+	<form ng-submit="dirList.add()"><!--Her also added dirList-->
+		<input type="text" ng-model="dirList.name" placeholder="Enter Name" autofocus="true">
+		<input type="number" ng-model="dirList.age" placeholder="Enter age">
+		<input type="submit" >														
+	</form>
+
+	<ul ng-class="{'hide': hideul, 'show': showul}">
+		<li ng-repeat="x in dirList.list   " ng-class=""><span>{{x.name | uppercase}} {{x.age | currency:'&#8377;':0}}</span> <img ng-src="{{x.img}}"> </li>
+	</ul>
+
+<!-- ****************************************************************** -->
+<script type="text/javascript">
+	var app= angular.module('directoryApp', ["ngAnimate"]);
+
+	app.controller('directoryCtrl', function(){
+
+		var dirList = this; //replacing the $scope as it raises the conflict when two controllers are used
+		dirList.list=[{name:"Qwinix", age:20, img: "https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"},
+									{name:"abc", age:150, img: "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" },
+									{name:"mysore", age:50, img: "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg"},
+									{name:"zyc", age:1500, img: "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg"},
+									{name:"c", age:0, img: "https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg"}
+								];
+
+
+
+		dirList.add=function(){
+
+			if(dirList.age >= 10 && dirList.age <= 99 || dirList.age <= -10 && dirList.age >= -99){
+
+			dirList.list.push({name:dirList.name,age:dirList.age});
+			}else{
+				alert('enter valid age');
+			}
+			console.log(dirList.age);
+			dirList.name='';
+			dirList.age='';
+		};
+
+		dirList.show=function(){
+			window.alert('hai');
+		};
+
+
+	
+	});
+
+
+		// function show()
+		// {
+		// 	alert('hai');
+		// 		document.getElementById("items").style.display="block";
+		// }
+</script>
+</body>
+</html>
